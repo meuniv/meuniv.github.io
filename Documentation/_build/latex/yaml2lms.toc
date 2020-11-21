@@ -1,0 +1,24 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}General purpose}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Functionalities}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Installation}{1}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Basic usage and configuration file}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Configuration file}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Portable Data File creation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Answer Key PDF file}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Spellchecked PDF file}{5}{section.3.2}%
+\contentsline {chapter}{\numberline {4}LMS Output}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Text only}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}LMS using images}{8}{section.4.2}%
+\contentsline {chapter}{\numberline {5}YAML Format (input)}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Question example}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Anatomy of a question}{11}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Spellchecking}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Usage}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Notes}{13}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Example}{14}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Example of multiple questions}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Yaml input}{15}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Latex Output}{17}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Latex Output with keys}{18}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Work in Progress and Future Utilities:}{19}{chapter.8}%

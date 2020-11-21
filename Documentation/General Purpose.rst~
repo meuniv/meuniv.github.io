@@ -1,0 +1,24 @@
+General purpose
++++++++++++++++
+The purpose of this tool is to convert a `yaml` file into a file usable for 
+multiple-choice questions in LMS. The code also creates latex file as needed. 
+
+Functionalities
+---------------
+
+1) Creation of files needed for integration with LMS or Canvas
+2) Creation of latex files using the Exam package
+3) Creation of latex files with answer keys
+4) Spellchecking
+
+Installation
+------------
+There is no installation needed as this is a simply Python script.
+
+Just make sure to have:
+
+1. A working Latex environment in place
+2. Python installed
+
+If you use specific Latex packages in your mathematical formulas, you will need to edit the python script directly (work in progress to make this process simpler). 
+

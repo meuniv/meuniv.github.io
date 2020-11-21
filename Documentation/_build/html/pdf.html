@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Portable Data File creation &mdash; Yaml2LMS 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Yaml2LMS 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="LMS Output" href="lms.html"/>
+        <link rel="prev" title="Basic usage and configuration file" href="usage.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Yaml2LMS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="General Purpose.html">General purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage and configuration file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Portable Data File creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#answer-key-pdf-file">Answer Key PDF file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spellchecked-pdf-file">Spellchecked PDF file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lms.html">LMS Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Question format.html">YAML Format (input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spellcheck.html">Spellchecking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Full Example.html">Example of multiple questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkinProgress.html">Work in Progress and Future Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yaml2LMS</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Portable Data File creation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pdf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="portable-data-file-creation">
+<span id="pdf-label"></span><h1>Portable Data File creation<a class="headerlink" href="#portable-data-file-creation" title="Permalink to this headline">¶</a></h1>
+<p>By default, <em>yaml2lms</em> always creates a PDF file, using latex processing and the <a class="reference external" href="http://www-math.mit.edu/~psh/exam/examdoc.pdf">exam</a> class. The output file name (<strong>&lt;prefix&gt;.pdf</strong>) is built based on the <em>yaml</em> file name provided using <code class="code docutils literal notranslate"><span class="pre">yamlfile:</span> <span class="pre">&lt;prefix&gt;.yaml</span></code> in <em>config.yaml</em>.</p>
+<p>The document will have a two-line title, provided by the tags <code class="code docutils literal notranslate"><span class="pre">title1</span></code> and <code class="code docutils literal notranslate"><span class="pre">title2</span></code> in the <em>config.yaml</em> file.</p>
+<p>An example of PDF file output is shown in <a class="reference internal" href="Full Example.html#example"><span class="std std-ref">Example of multiple questions</span></a>.</p>
+<p>Two additional PDF files can be created if requested in the <em>config.yaml</em> files as described below.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>During PDF file creation, a <strong>&lt;prefix&gt;.tex</strong> is also created. If the PDF file fails to compile (because of an issue with your latex input), you can directly refer to the latex source. You can also fine-tune that file as necessary.</p>
+</div>
+<div class="section" id="answer-key-pdf-file">
+<h2>Answer Key PDF file<a class="headerlink" href="#answer-key-pdf-file" title="Permalink to this headline">¶</a></h2>
+<p>If <code class="code docutils literal notranslate"><span class="pre">solutionKey:</span> <span class="pre">yes</span></code> is specified, in addition to the questionnaire itself, a file, named <strong>&lt;prefix&gt;_solutions.pdf</strong> is created where the <em>correct</em> asnwers are highlighted. (See  <a class="reference internal" href="Full Example.html#example"><span class="std std-ref">Example of multiple questions</span></a> for an example).</p>
+</div>
+<div class="section" id="spellchecked-pdf-file">
+<h2>Spellchecked PDF file<a class="headerlink" href="#spellchecked-pdf-file" title="Permalink to this headline">¶</a></h2>
+<p>If <code class="code docutils literal notranslate"><span class="pre">spellcheck:</span> <span class="pre">yes</span></code> is specified, <em>yaml2.lms</em> performs a rudimentary spell checking of the input. This feature is described in details at <a class="reference internal" href="spellcheck.html#spellcheck-label"><span class="std std-ref">Spellchecking</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to carefully check the PDF files before starting the process of creating LMS files. The <code class="code docutils literal notranslate"><span class="pre">createLMS:</span> <span class="pre">yes</span></code> option can take a few minutes or so to process, depending on the number of questions. And it is best to perform this once you have checked the spelling and the correctness of the answer keys. Note, also, that the spellchecking is time consuming and once you are done spellchecking, it is best to turn that option off.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lms.html" class="btn btn-neutral float-right" title="LMS Output" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="Basic usage and configuration file" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Vincent Meunier.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

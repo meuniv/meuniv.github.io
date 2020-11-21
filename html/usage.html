@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic usage and configuration file &mdash; Yaml2LMS 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Yaml2LMS 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Portable Data File creation" href="pdf.html"/>
+        <link rel="prev" title="General purpose" href="General Purpose.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Yaml2LMS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="General Purpose.html">General purpose</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage and configuration file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pdf.html">Portable Data File creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lms.html">LMS Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Question format.html">YAML Format (input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spellcheck.html">Spellchecking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Full Example.html">Example of multiple questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkinProgress.html">Work in Progress and Future Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yaml2LMS</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Basic usage and configuration file</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-usage-and-configuration-file">
+<span id="config-label"></span><h1>Basic usage and configuration file<a class="headerlink" href="#basic-usage-and-configuration-file" title="Permalink to this headline">¶</a></h1>
+<p>run the python script in a directory where the <code class="code docutils literal notranslate"><span class="pre">config.yaml</span></code> file described below is located.</p>
+<div class="section" id="configuration-file">
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>All information is provided in the <code class="code docutils literal notranslate"><span class="pre">config.yaml</span></code> input file. The file reads as:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">yamlfile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">quiz20.yaml</span>
+<span class="nt">spellcheck</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="nt">createLMS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="nt">createLMS_text</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="nt">base</span><span class="p">:</span> <span class="s">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/&quot;</span>
+<span class="nt">dir</span><span class="p">:</span> <span class="s">&quot;THERMO&quot;</span>
+<span class="nt">title1</span><span class="p">:</span> <span class="s">&#39;PHYS</span><span class="nv"> </span><span class="s">{4420}:</span><span class="nv"> </span><span class="s">Thermodynamics</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Statistical</span><span class="nv"> </span><span class="s">Mechanics</span><span class="nv"> </span><span class="s">(Quiz</span><span class="nv"> </span><span class="s">20)&#39;</span>
+<span class="nt">title2</span><span class="p">:</span> <span class="s">&quot;Dr.</span><span class="nv"> </span><span class="s">Vincent</span><span class="nv"> </span><span class="s">Meunier,</span><span class="nv"> </span><span class="s">Fall</span><span class="nv"> </span><span class="s">2020&quot;</span>
+<span class="nt">solutionKey</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+</pre></div>
+</div>
+<p>The various keywords (ending with a <code class="code docutils literal notranslate"><span class="pre">:</span></code>) are mostly self-explanatory.</p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">yamlfile</span></code> provides the actual file with the list of questions (see here: <a class="reference internal" href="Question format.html#my-reference-label"><span class="std std-ref">YAML Format (input)</span></a>)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">spellcheck</span></code> is a <em>yes/no</em> input (more information can be found here: <a class="reference internal" href="spellcheck.html#spellcheck-label"><span class="std std-ref">Spellchecking</span></a>)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">createLMS</span></code> and <code class="code docutils literal notranslate"><span class="pre">createLMS_text</span></code> are <em>yes/no</em> answers (see here: <a class="reference internal" href="lms.html#lms-label"><span class="std std-ref">LMS Output</span></a>)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">base</span></code> is only used if the  <code class="code docutils literal notranslate"><span class="pre">createLMS:</span> <span class="pre">yes</span></code> is used. It is also described in <a class="reference internal" href="lms.html#lms-label"><span class="std std-ref">LMS Output</span></a>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">dir</span></code> is only used if the  <code class="code docutils literal notranslate"><span class="pre">createLMS:</span> <span class="pre">yes</span></code> is used. It is also described in <a class="reference internal" href="lms.html#lms-label"><span class="std std-ref">LMS Output</span></a>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">title1</span></code> and <code class="code docutils literal notranslate"><span class="pre">title2</span></code> are used to assemble the PDF files (both the raw exam and the version with answer keys when requested)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">solutionKey</span></code> is a <em>yes/no</em> input. This provides the answer Key in a PDF file with highlighted answers (see here <a class="reference internal" href="pdf.html#pdf-label"><span class="std std-ref">Portable Data File creation</span></a>)</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This configuration file was used to create the examples shown in <a class="reference internal" href="Full Example.html#example"><span class="std std-ref">Example of multiple questions</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pdf.html" class="btn btn-neutral float-right" title="Portable Data File creation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="General Purpose.html" class="btn btn-neutral" title="General purpose" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Vincent Meunier.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

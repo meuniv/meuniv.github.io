@@ -1,0 +1,10 @@
+Installation
+++++++++++++
+There is no installation needed as this is a simply Python script.
+
+Just make sure to have a:
+
+1. Working Latex environment in place
+2. Python installed
+
+If you use specific Latex packages in your mathematical formulas, you will need to edit the python script directly (work in progress to make this process simpler). 

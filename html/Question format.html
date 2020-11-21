@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>YAML Format (input) &mdash; Yaml2LMS 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Yaml2LMS 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Spellchecking" href="spellcheck.html"/>
+        <link rel="prev" title="LMS Output" href="lms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Yaml2LMS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="General Purpose.html">General purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage and configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf.html">Portable Data File creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lms.html">LMS Output</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">YAML Format (input)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#question-example">Question example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anatomy-of-a-question">Anatomy of a question</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spellcheck.html">Spellchecking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Full Example.html">Example of multiple questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkinProgress.html">Work in Progress and Future Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yaml2LMS</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>YAML Format (input)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Question format.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="yaml-format-input">
+<span id="my-reference-label"></span><h1>YAML Format (input)<a class="headerlink" href="#yaml-format-input" title="Permalink to this headline">¶</a></h1>
+<p>Each question is provided in <cite>yaml</cite> format. The format is somewhat unforgiving as spacings and alignments need to be correct for the file to be readable. Below is an example of simple question using this format. Each line will be described in details.</p>
+<div class="section" id="question-example">
+<h2>Question example<a class="headerlink" href="#question-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="p p-Indicator">-</span> <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MC</span>
+     <span class="nt">Text</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">In the screencast we derived an expression for the Fermi-Dirac distribution</span>
+      <span class="no">using the grand canonical ensemble. What is the grand canonical ensemble?</span>
+     <span class="nt">Size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Auto</span>
+     <span class="nt">Points</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+     <span class="nt">Answers</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span>  <span class="p p-Indicator">&gt;-</span>
+          <span class="no">The ensemble of systems with fixed energy and entropy.</span>
+        <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">incorrect</span>
+      <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">The ensemble of systems with fixed energy and chemical potential.</span>
+        <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">incorrect</span>
+      <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="s">&#39;The</span><span class="nv"> </span><span class="s">ensemble</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">systems</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">fixed</span><span class="nv"> </span><span class="s">temperature</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">chemical</span><span class="nv"> </span><span class="s">potential.&#39;</span>
+        <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">correct</span>
+      <span class="nt">Skip</span><span class="p">:</span> <span class="s">&#39;no&#39;</span>
+      <span class="nt">Note</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">question regarding lecture 29</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="anatomy-of-a-question">
+<h2>Anatomy of a question<a class="headerlink" href="#anatomy-of-a-question" title="Permalink to this headline">¶</a></h2>
+<p>We will now review each line. Basically, all name that are followed by “:” is a key in a dictionary. If you wish to use a “:” in your questions or answers, you need to use quotation marks (or the <code class="code docutils literal notranslate"><span class="pre">&gt;-</span></code> sign – it is usually used for text with multiple lines).</p>
+<ol class="arabic simple">
+<li><p>New question starts with the type.</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MC</span>
+</pre></div>
+</div>
+<p>Each new question starts with a <code class="code docutils literal notranslate"><span class="pre">-</span> <span class="pre">Type:</span></code> keyword. The options are: <code class="code docutils literal notranslate"><span class="pre">MC</span></code> (Multiple Choice), <code class="code docutils literal notranslate"><span class="pre">MA</span></code> (Multiple Answers),…</p>
+<ol class="arabic simple" start="2">
+<li><p>Description of the question itself.</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">Text</span><span class="p">:</span> <span class="s">&#39;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">question&#39;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">Text</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+   <span class="no">This is a multiline question with various parts in it.</span>
+   <span class="no">Try it if you want to.</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The advantage of this appraoch is that you can use Latex commands in both text and math modes in all the texts used in the yaml file.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>For multiple-choice questions, you then have the list of possible answers:</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Answers</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span>  <span class="p p-Indicator">&gt;-</span>
+         <span class="no">The ensemble of systems with fixed energy and entropy.</span>
+       <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">incorrect</span>
+</pre></div>
+</div>
+<p>Each Choice can be entered in a single-line or multiline format. There is a second keyword called <code class="code docutils literal notranslate"><span class="pre">Validity</span></code> (case sensitive) to assign an <cite>incorrect</cite> or <cite>correct</cite> attribute to the choice. Note that you only need to provide the information for a <em>correct</em> asnwer as the script will assign an <em>incorrect</em> attribute by default.</p>
+<ul class="simple">
+<li><p>Note 1: You can list as many <em>Choice</em> lines as you need.</p></li>
+<li><p>Note 2: For some types of questions, only one answer can have the <code class="code docutils literal notranslate"><span class="pre">Validity:</span> <span class="pre">correct</span></code> attribute.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>You can skip the question from the file without deleting it by using: <code class="code docutils literal notranslate"><span class="pre">Skip:</span> <span class="pre">'no'</span></code> (this is an optional keyword)</p></li>
+<li><p>To keep things tidy, you can add a note for each question, using the <code class="code docutils literal notranslate"><span class="pre">Note:</span></code> keyword.</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A good habit is to check your <cite>yaml</cite> file using a free online
+tool such as those provided by onlineyamltools.com (see, here: <a class="reference external" href="https://onlineyamltools.com/validate-yaml">https://onlineyamltools.com/validate-yaml</a>). After a while you won’t make a mistake anymore but early on, this could be frustrating.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spellcheck.html" class="btn btn-neutral float-right" title="Spellchecking" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lms.html" class="btn btn-neutral" title="LMS Output" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Vincent Meunier.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

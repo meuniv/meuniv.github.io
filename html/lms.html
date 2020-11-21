@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LMS Output &mdash; Yaml2LMS 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Yaml2LMS 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="YAML Format (input)" href="Question format.html"/>
+        <link rel="prev" title="Portable Data File creation" href="pdf.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Yaml2LMS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="General Purpose.html">General purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage and configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf.html">Portable Data File creation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LMS Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#text-only">Text only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lms-using-images">LMS using images</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Question format.html">YAML Format (input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spellcheck.html">Spellchecking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Full Example.html">Example of multiple questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkinProgress.html">Work in Progress and Future Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yaml2LMS</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>LMS Output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lms-output">
+<span id="lms-label"></span><h1>LMS Output<a class="headerlink" href="#lms-output" title="Permalink to this headline">¶</a></h1>
+<p>One of the major goals of <em>yaml2lms</em> is to create an interface between a list of questions you create locally to a format that can be directly imported into an online teaching platform such as Blackboard. It is called Learning Management System (LMS) at Rensselaer Polytechnic Institute. However, the same format is used widely in systems such as <em>canvas</em>.</p>
+<p>It is possible to import questions on LMS but the format is somewhat
+difficult to handle. The format can be found at various places online,
+such as as on the <a class="reference external" href="https://help.blackboard.com/Learn/Instructor/Tests_Pools_Surveys/Reuse_Questions/Upload_Questions/">Blackboard</a> website.</p>
+<p>The primary goal of this script is to translate the <em>yaml</em>-formatted questions into a file readable by Blackboard.</p>
+<div class="section" id="text-only">
+<h2>Text only<a class="headerlink" href="#text-only" title="Permalink to this headline">¶</a></h2>
+<p>If you only have unformatted text in your questions, this is the option you need to use in the <em>config.yaml</em> file (<code class="code docutils literal notranslate"><span class="pre">createLMS_text:</span> <span class="pre">yes</span></code>), as described in <a class="reference internal" href="usage.html#config-label"><span class="std std-ref">Basic usage and configuration file</span></a>. In this case, all the information is stored in a file that can be directly uploaded onto lms.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the name of the output file is built from the &lt;prefix&gt; of the input file name provided in <em>config.yaml</em> under <code class="code docutils literal notranslate"><span class="pre">yamlfile:</span> <span class="pre">&lt;prefix&gt;.yaml</span></code> to which “_LMS_text.txt” is appended.</p>
+</div>
+<p>Example:</p>
+<p>If the input is:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MC</span>
+  <span class="nt">Text</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+    <span class="no">Consider the exchange operator P12 whose effect is to swap two</span>
+    <span class="no">particles. What is true among the assertions below?</span>
+  <span class="nt">Answers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The eigenvalues of the operator are complex.</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The eigenvalues of the operator are positive.</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">The eigenvalues of the operator can only take two values for any</span>
+      <span class="no">wavefunction describing a pair of Bosons or a pair of Fermions.</span>
+    <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">correct</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="s">&#39;The</span><span class="nv"> </span><span class="s">operator</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">unitary</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">Hermitian.&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="s">&#39;None</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">claims</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">correct.</span><span class="nv">  </span><span class="s">&#39;</span>
+  <span class="nt">Note</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lecture 29</span>
+</pre></div>
+</div>
+<p>The output becomes:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MC Consider the exchange operator P12 whose effect is
+ to swap two particles. What is true among the assertions below?
+ The eigenvalues of the operator are complex.  incorrect The
+ eigenvalues of the operator are positive.  incorrect The
+ eigenvalues of the operator can only take two values for any
+ wavefunction describing a pair of Bosons or a pair of Fermions.
+ correct The operator is unitary but not Hermitian.  incorrect
+ None of the other claims are correct.  incorrect
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can upload the file <code class="code docutils literal notranslate"><span class="pre">&lt;prefix&gt;_lms_text.txt</span></code> on LMS when creating a new test (or adding a question to an existing test) and you obtain a result like this:</p>
+<a class="reference internal image-reference" href="_images/LMS_text_export.png"><img alt="Alternative text" src="_images/LMS_text_export.png" style="width: 800px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this example, we only used one question but if the <em>yaml</em> file contains multiple questions, they will be included into the test on LMS.</p>
+</div>
+</div>
+<div class="section" id="lms-using-images">
+<h2>LMS using images<a class="headerlink" href="#lms-using-images" title="Permalink to this headline">¶</a></h2>
+<p>The method described above works very well and is very fast in terms of processing time.
+However, it does not allow for fancy formatting and, while possible, the inclusion of math symbols is neither straitghforward nor totally satisfactory.
+Here, I describe the second method to create an LMS test using more advanced formatting. In this case you need to use this option: <code class="code docutils literal notranslate"><span class="pre">createLMS:</span> <span class="pre">yes</span></code>.</p>
+<p>It is <strong>important to note</strong> that this mode uses a collection of small images to assemble the questions (each image is created by <span class="math notranslate nohighlight">\(\textrm{\LaTeX}\)</span>). So, the only caveat with this method is that you need a place where you will copy the images and that place has to be accessible on the web.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <em>LMS using images</em> mode is only possible if you have a place where you can copy the images to be accessible on a browser.</p>
+</div>
+<p>The place where the images will be copied is provided in the keyword <code class="code docutils literal notranslate"><span class="pre">base:</span> <span class="pre">&lt;httpsite&gt;</span></code> provided in file <em>config.yaml</em>, as described in <a class="reference internal" href="usage.html#config-label"><span class="std std-ref">Basic usage and configuration file</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the name of the output file is built from the &lt;prefix&gt; of the input file name provided in <em>config.yaml</em> under <code class="code docutils literal notranslate"><span class="pre">yamlfile:</span> <span class="pre">&lt;prefix&gt;.yaml</span></code> to which “_LMS_png.txt” is appended.</p>
+</div>
+<p>Let’s describe the process using an example. The example is similar to the one we use for the text-only option but in this case, we added some latex codes and also some formating code.</p>
+<p>If the input is:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MC</span>
+  <span class="nt">Text</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+    <span class="no">Consider the exchange operator $\hat{P}_{12}$  whose effect is to swap two</span>
+    <span class="no">particles. What is \textbf{true} among the assertions below?</span>
+  <span class="nt">Answers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The eigenvalues of the operator are \textit{complex}.</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The eigenvalues of the operator are positive.</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">The eigenvalues of the operator can only take two values for any</span>
+      <span class="no">wavefunction describing a pair of Bosons or a pair of Fermions.</span>
+    <span class="nt">Validity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">correct</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="s">&#39;The</span><span class="nv"> </span><span class="s">operator</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">unitary</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">Hermitian.&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Choice</span><span class="p">:</span> <span class="s">&#39;None</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">claims</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">correct.</span><span class="nv">  </span><span class="s">&#39;</span>
+  <span class="nt">Note</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lecture 29</span>
+</pre></div>
+</div>
+<p>When using the option <code class="code docutils literal notranslate"><span class="pre">createLMS:</span> <span class="pre">yes</span></code>, <em>yaml2lms</em> creates a file <code class="code docutils literal notranslate"><span class="pre">&lt;prefix&gt;_lms_png.txt</span></code> along with a directory with a collection of images
+The output stored in  <code class="code docutils literal notranslate"><span class="pre">&lt;prefix&gt;_lms_png.tx</span></code> looks something like this (though you will probably never have to look at it, as the idea of the script is to avoid it!)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MC</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0_0.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">incorrect</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0_1.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">incorrect</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0_2.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">correct</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0_3.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">incorrect</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+<span class="n">src</span><span class="o">=</span><span class="s2">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3/Q0/Q0_4.png&quot;</span>
+<span class="n">height</span><span class="o">=</span><span class="s2">&quot;33&quot;</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">incorrect</span>
+</pre></div>
+</div>
+<p>You can see from the example that the script tells LMS that the various image files are stored, in this example, at “<a class="reference external" href="http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3">http://homepages.rpi.edu/~meuniv/Images/TSM_F20/Questions_THERMO_test3</a>”.This address was created using the <code class="code docutils literal notranslate"><span class="pre">base:</span> <span class="pre">&quot;http://homepages.rpi.edu/~meuniv/Images/TSM_F20/&quot;</span></code> provided in <em>config.yaml</em> and the directory is built from <code class="code docutils literal notranslate"><span class="pre">dir:</span> <span class="pre">&quot;THERMO&quot;</span></code>.</p>
+<p>Now that you have completed this, you only need two more steps.</p>
+<ol class="arabic simple">
+<li><p>Copy the image directory to the place where you want to move the file. This can be done easily with a method such as <code class="code docutils literal notranslate"><span class="pre">scp</span> <span class="pre">-r</span> <span class="pre">Questions_THERMO_test3</span>&#160; <span class="pre">meuniv&#64;rcs.rpi.edu:~/public_html/Images/TSM_F20/.</span></code> This line is provided for your convenience at the end of the script. Of course you need to change the username and the address of the server where you place the file. Here I use the space provided by my university but using a different repository may not be a bad idea (github or even dropbox).</p></li>
+<li><p>Go to LMS and upload the questions, using the file <code class="code docutils literal notranslate"><span class="pre">&lt;prefix&gt;_lms_png.txt</span></code> as described above.</p></li>
+</ol>
+<p>After uploading the question, the exam looks like this:</p>
+<a class="reference internal image-reference" href="_images/LMS_png_export.png"><img alt="Alternative text" src="_images/LMS_png_export.png" style="width: 800px;" /></a>
+<p>The content is the same as in the example using text only. I personally prefer this approach as it makes for much nicer looking exam, even when no math is required. However, note that the other method is somewhat more straighforward.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not turn on the creation of LMS file (either methods) until you have carefully checked the PDF created with the default options. It is also important to check that the asnwers you selected as correct are indeed correct (check the PDF with the answer keys). It is always possible to change that on LMS itself but it is not as easy.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Question format.html" class="btn btn-neutral float-right" title="YAML Format (input)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pdf.html" class="btn btn-neutral" title="Portable Data File creation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Vincent Meunier.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
